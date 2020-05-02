@@ -27,14 +27,18 @@ public class Article {
 	
 	@Column(name = "category")
 	private String category;
+	
+	@Column(name = "image")
+	private int image;
 
 	public Article() {
 	}
 
-	public Article(String name, String description, String category) {
+	public Article(String name, String description, String category, int image) {
 		this.name = name;
 		this.description = description;
 		this.category = category;
+		this.image = image;
 	}
 
 	public Integer getId() {
@@ -67,6 +71,14 @@ public class Article {
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+
+	public int getImage() {
+		return image;
+	}
+
+	public void setImage(int image) {
+		this.image = image;
 	}
 
 }
