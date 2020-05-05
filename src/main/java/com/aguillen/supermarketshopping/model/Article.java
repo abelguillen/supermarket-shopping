@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -28,13 +29,14 @@ public class Article {
 	@Column(name = "category")
 	private String category;
 	
+	@Lob
 	@Column(name = "image")
-	private int image;
+	private String image;
 
 	public Article() {
 	}
 
-	public Article(String name, String description, String category, int image) {
+	public Article(String name, String description, String category, String image) {
 		this.name = name;
 		this.description = description;
 		this.category = category;
@@ -73,11 +75,11 @@ public class Article {
 		this.category = category;
 	}
 
-	public int getImage() {
+	public String getImage() {
 		return image;
 	}
 
-	public void setImage(int image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
 

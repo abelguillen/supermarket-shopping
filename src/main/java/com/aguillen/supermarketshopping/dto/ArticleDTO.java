@@ -9,11 +9,11 @@ public class ArticleDTO {
 	private String name;
 	private String description;
 	private String category;
-	private int image;
+	private String image;
 
 	public ArticleDTO() {}
 
-	public ArticleDTO(Integer id, String name, String description, String category, int image) {
+	public ArticleDTO(Integer id, String name, String description, String category, String image) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
@@ -53,11 +53,11 @@ public class ArticleDTO {
 		this.category = category;
 	}
 
-	public int getImage() {
+	public String getImage() {
 		return image;
 	}
 
-	public void setImage(int image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
 
