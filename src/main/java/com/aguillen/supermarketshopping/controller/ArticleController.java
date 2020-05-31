@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aguillen.supermarketshopping.dto.ArticleDTO;
-import com.aguillen.supermarketshopping.model.Article;
 import com.aguillen.supermarketshopping.service.ArticleService;
+import com.aguillen.supermarketshopping.util.Mapper;
 
 @RestController
 @RequestMapping(value="/article")
@@ -35,13 +35,13 @@ public class ArticleController {
     }
 	
 	@PostMapping("/create")
-	public ArticleDTO create(@RequestBody Article article) {
-		return service.save(article);
+	public ArticleDTO create(@RequestBody ArticleDTO articleDTO) {
+		return service.save(Mapper.buildBO(articleDTO));
 	}
 	
 	@PutMapping("/update")
-	public ArticleDTO update(@RequestBody Article article) {
-		return service.save(article);
+	public ArticleDTO update(@RequestBody ArticleDTO articleDTO) {
+		return service.save(Mapper.buildBO(articleDTO));
 	}
 	
 	@DeleteMapping("/delete")

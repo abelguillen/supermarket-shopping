@@ -11,7 +11,7 @@ import com.aguillen.supermarketshopping.dto.ArticleDTO;
 import com.aguillen.supermarketshopping.model.Article;
 
 @Component
-public class Convert {
+public class Mapper {
 
 	@Autowired
 	private static ModelMapper modelMapper = new ModelMapper();

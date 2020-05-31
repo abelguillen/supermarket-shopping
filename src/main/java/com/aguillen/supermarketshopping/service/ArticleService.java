@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.aguillen.supermarketshopping.dto.ArticleDTO;
 import com.aguillen.supermarketshopping.model.Article;
 import com.aguillen.supermarketshopping.repository.ArticleRepository;
-import com.aguillen.supermarketshopping.util.Convert;
+import com.aguillen.supermarketshopping.util.Mapper;
 
 @Service
 public class ArticleService {
@@ -18,7 +18,7 @@ public class ArticleService {
 	
 	public List<ArticleDTO> getAll() {
 		try {
-			return Convert.convertBoToDto(repository.findAll());
+			return Mapper.convertBoToDto(repository.findAll());
 		} catch(Exception ex) {
 			return null;
 		}
@@ -26,7 +26,7 @@ public class ArticleService {
 
 	public ArticleDTO getOne(Integer id) {
 		try {
-			return Convert.buildDTO(repository.getOne(id));
+			return Mapper.buildDTO(repository.getOne(id));
 		} catch(Exception ex) {
 			return null;
 		}
@@ -34,7 +34,7 @@ public class ArticleService {
 	
 	public ArticleDTO save(Article article) {
 		try {
-			return Convert.buildDTO(repository.save(article));
+			return Mapper.buildDTO(repository.save(article));
 		} catch(Exception ex) {
 			return null;
 		}
