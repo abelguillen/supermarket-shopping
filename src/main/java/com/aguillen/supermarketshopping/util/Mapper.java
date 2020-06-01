@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.aguillen.supermarketshopping.dto.ArticleDTO;
+import com.aguillen.supermarketshopping.dto.CategoryDTO;
 import com.aguillen.supermarketshopping.model.Article;
+import com.aguillen.supermarketshopping.model.Category;
 
 @Component
 public class Mapper {
@@ -16,20 +18,42 @@ public class Mapper {
 	@Autowired
 	private static ModelMapper modelMapper = new ModelMapper();
 	
-	public static ArticleDTO buildDTO(Article article) {
+	
+	//Article
+	
+	public static ArticleDTO buildArticleDTO(Article article) {
 		return modelMapper.map(article, ArticleDTO.class);
 	}
 	
-	public static Article buildBO(ArticleDTO articleDTO) {
+	public static Article buildArticleBO(ArticleDTO articleDTO) {
 		return modelMapper.map(articleDTO, Article.class);
 	}
 	
-	public static List<ArticleDTO> convertBoToDto(List<Article> articles) {
+	public static List<ArticleDTO> convertArticleBoToDto(List<Article> articles) {
 		List<ArticleDTO> articlesDTO = new ArrayList<ArticleDTO>();
 		for(Article article : articles) {
-			articlesDTO.add(buildDTO(article));
+			articlesDTO.add(buildArticleDTO(article));
 		}
 		return articlesDTO;
+	}
+	
+	
+	// Category
+	
+	public static CategoryDTO buildCategoryDTO(Category category) {
+		return modelMapper.map(category, CategoryDTO.class);
+	}
+	
+	public static Category buildCategoryBO(CategoryDTO categoryDTO) {
+		return modelMapper.map(categoryDTO, Category.class);
+	}
+	
+	public static List<CategoryDTO> convertCategoryBoToDto(List<Category> categorys) {
+		List<CategoryDTO> categorysDTO = new ArrayList<CategoryDTO>();
+		for(Category category : categorys) {
+			categorysDTO.add(buildCategoryDTO(category));
+		}
+		return categorysDTO;
 	}
 	
 }
