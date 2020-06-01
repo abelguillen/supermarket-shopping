@@ -9,5 +9,8 @@ import com.aguillen.supermarketshopping.model.Category;
 public interface CategoryRepository extends CrudRepository<Category, Integer> {
 	
 	public List<Category> findAll();
+	
+	@SuppressWarnings("unchecked")
+	public Category save(Category category);
 
 }
