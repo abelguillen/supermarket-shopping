@@ -29,6 +29,11 @@ public class ArticleController {
         return service.getAll();
     }
 	
+	@GetMapping("/list/{category}")
+    public List<ArticleDTO> getByCategory(@PathVariable("category") String category){
+        return service.getByCategory(category);
+    }
+	
 	@GetMapping("/{id}")
     public ArticleDTO getOne(@PathVariable("id") Integer id){
         return service.getOne(id);
@@ -36,12 +41,12 @@ public class ArticleController {
 	
 	@PostMapping("/create")
 	public ArticleDTO create(@RequestBody ArticleDTO articleDTO) {
-		return service.save(Mapper.buildBO(articleDTO));
+		return service.save(Mapper.buildArticleBO(articleDTO));
 	}
 	
 	@PutMapping("/update")
 	public ArticleDTO update(@RequestBody ArticleDTO articleDTO) {
-		return service.save(Mapper.buildBO(articleDTO));
+		return service.save(Mapper.buildArticleBO(articleDTO));
 	}
 	
 	@DeleteMapping("/delete")
