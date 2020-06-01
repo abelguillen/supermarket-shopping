@@ -18,7 +18,15 @@ public class ArticleService {
 	
 	public List<ArticleDTO> getAll() {
 		try {
-			return Mapper.convertBoToDto(repository.findAll());
+			return Mapper.convertArticleBoToDto(repository.findAll());
+		} catch(Exception ex) {
+			return null;
+		}
+	}
+	
+	public List<ArticleDTO> getByCategory(String category) {
+		try {
+			return Mapper.convertArticleBoToDto(repository.findByCategory(category));
 		} catch(Exception ex) {
 			return null;
 		}
@@ -26,7 +34,7 @@ public class ArticleService {
 
 	public ArticleDTO getOne(Integer id) {
 		try {
-			return Mapper.buildDTO(repository.getOne(id));
+			return Mapper.buildArticleDTO(repository.getOne(id));
 		} catch(Exception ex) {
 			return null;
 		}
@@ -34,7 +42,7 @@ public class ArticleService {
 	
 	public ArticleDTO save(Article article) {
 		try {
-			return Mapper.buildDTO(repository.save(article));
+			return Mapper.buildArticleDTO(repository.save(article));
 		} catch(Exception ex) {
 			return null;
 		}

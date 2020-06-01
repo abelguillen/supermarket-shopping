@@ -8,9 +8,11 @@ import org.springframework.stereotype.Repository;
 import com.aguillen.supermarketshopping.model.Article;
 
 @Repository
-public interface ArticleRepository extends CrudRepository<Article, Integer>{
+public interface ArticleRepository extends CrudRepository<Article, Integer> {
 	
 	public List<Article> findAll();
+	
+	public List<Article> findByCategory(String category);
 	
 	public Article getOne(Integer id);
 	
@@ -18,4 +20,5 @@ public interface ArticleRepository extends CrudRepository<Article, Integer>{
 	public Article save(Article article);
 	
 	public void deleteById(Integer id);
+	
 }
