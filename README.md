@@ -1,1 +1,1 @@
-# supermarketshopping
+# supermarket-shopping
