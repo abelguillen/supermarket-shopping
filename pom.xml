@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.aguillen</groupId>
-	<artifactId>supermarketshopping</artifactId>
+	<artifactId>supermarket-shopping</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>supermarketshopping</name>
+	<name>supermarket-shopping</name>
 	<description>Supermarket Shopping</description>
 
 	<properties>
