@@ -15,7 +15,6 @@ import com.aguillen.supermarketshopping.model.Category;
 @Component
 public class Mapper {
 
-	@Autowired
 	private static ModelMapper modelMapper = new ModelMapper();
 	
 	
